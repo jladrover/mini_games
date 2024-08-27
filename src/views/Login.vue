@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>
+        <h1>Fuck Yall</h1>
+    </div>
 </template>
 
 <script setup>
