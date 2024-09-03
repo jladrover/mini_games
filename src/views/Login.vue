@@ -29,7 +29,7 @@
             <el-button type="success" @click="login = !login">Go to login</el-button>
         </el-header>
         <el-main>
-            <el-form :model="form" label-width="auto" style="max-width: 500px">
+            <el-form :model="form" :rules="rules" ref="ruleFormRef" label-width="auto" style="max-width: 500px">
                 <el-form-item label="Username" prop="name" placeholder="Choose a username">
                     <el-input clearable  v-model="ruleForm.name" placeholder="Choose a unique username"/>
                 </el-form-item>
@@ -100,6 +100,7 @@ const validatePass2 = (rule, value, callback) => {
 }
 
 const submitForm = (formEl) => {
+  console.log(formEl)
   if (!formEl) return
   formEl.validate((valid) => {
     if (valid) {
