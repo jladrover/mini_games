@@ -119,9 +119,17 @@ const toggleLoginRegister = () => {
 
 const submitLoginForm = async () => {
   if (!loginFormRef.value) return
-  await loginFormRef.value.validate((valid, fields) => {
+  await loginFormRef.value.validate(async (valid, fields) => {
     if (valid) {
-      console.log('Login submitted:', loginForm.value)
+      const { name, pass } = loginForm.value;
+      //const hashedPassword = password_SHA[name];
+      //console.log(userName, password_SHA);
+      if (name.toLowerCase() == userName.toLowerCase() && pass === password_SHA) {
+        console.log('Login successful');
+      } else {
+        //console.log(name, pass);
+        console.log('Invalid username or password');
+      }
     } else {
       console.log('Login validation failed:', fields)
     }
