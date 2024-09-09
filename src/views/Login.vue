@@ -125,10 +125,11 @@ const submitLoginForm = async () => {
       //const hashedPassword = password_SHA[name];
       //console.log(userName, password_SHA);
       if (name.toLowerCase() == userName.toLowerCase() && pass === password_SHA) {
-        console.log('Login successful');
+        alert('Login successful');
       } else {
         //console.log(name, pass);
-        console.log('Invalid username or password');
+        alert('Invalid username or password');
+        loginForm.value.pass = '';
       }
     } else {
       console.log('Login validation failed:', fields)
